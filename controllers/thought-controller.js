@@ -9,7 +9,7 @@ const thoughtController = {
         select: '__v'
       })
       .select('-__v')
-      .sort({ _id: -1 }
+      .sort({ _id: -1 })
       .then((dbThoughtData) => res.json(dbThoughtData))
       .catch((err) => {
         console.log(err);
