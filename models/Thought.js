@@ -16,9 +16,17 @@ const ThoughtSchema = new Schema({
     type: String,
     required: true,
     trim: true,
-  }
+  },
+  reactions: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: 'Reaction'
+    }
+  ]
 });
 
 const Thought = model('Thought', ThoughtSchema);
+
+
 
 module.exports = Thought;

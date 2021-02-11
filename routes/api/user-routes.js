@@ -11,7 +11,7 @@ const {
 // set up GET all and POST at /api/users
 router.route('/').get(getAllUsers).post(createUser);
 
-// set up GET one, PUT, and DELETE at /api/users/:ID
+// set up GET one, PUT, and DELETE user by ID at /api/users/:ID
 router.route('/:id').get(getUserById).put(updateUser).delete(deleteUser);
 
 module.exports = router;
