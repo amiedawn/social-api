@@ -4,8 +4,14 @@ const userController = {
   //get all users: GET /api/users
   getAllUsers(req, res) {
     User.find({})
-      .then(dbUserData => res.json(dbUserData))
-      .catch(err => {
+      .populate({
+        path: 'thoughts',
+        select: '-__v'
+      })
+      .select('-__v')
+      .sort({ _id: -1 })
+      .then((dbUserData) => res.json(dbUserData))
+      .catch((err) => {
         console.log(err);
         res.status(400).json(err);
       });
@@ -14,6 +20,11 @@ const userController = {
   // get one user by id: GET /api/users/:id
   getUserById({ params }, res) {
     User.findOne ({ _id: params.id })
+      .populate({
+        path: 'thoughts',
+        select: '-__v'
+      })
+      .select('-__v')
       .then(dbUserData => {
         // if no user is found, send 404
         if (!dbUserData) {
