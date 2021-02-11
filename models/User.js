@@ -39,7 +39,7 @@ const UserSchema = new Schema(
 // create the User model using the UserSchema
 const User = model('User', UserSchema);
 
-// get total count of comments and replies on retrieval
+// get total count of thoughts and reactions on retrieval
 UserSchema.virtual('thoughtCount').get(function() {
   return this.thoughts.length;
 });
