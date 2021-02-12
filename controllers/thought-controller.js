@@ -64,7 +64,7 @@ const thoughtController = {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       body,
-      { new: true }
+      { new: true, runValidators: true }
     )
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
@@ -104,7 +104,7 @@ const thoughtController = {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       { $push: { reactions: body } },
-      { new: true }
+      { new: true, runValidators: true }
     )
       .then((dbThoughtData) => {
             if (!dbThoughtData) {
@@ -120,7 +120,7 @@ const thoughtController = {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       { $pull: { reactions: { reactionId: params.reactionId } } },
-      { new: true }
+      { new: true, runValidators: true }
     )
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
