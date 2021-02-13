@@ -29,6 +29,7 @@ router.route('/:thoughtId/reactions').post(createReaction);
 router.route('/:thoughtId/reactions/:reactionId').delete(deleteReaction);
 
 // delete thoughts when users are gone
+// use: localhost:3001/api/thoughts/deleteall in insomnia to delete
 router.route('/deleteAll').delete(deleteAllThoughts);
 
 module.exports = router;

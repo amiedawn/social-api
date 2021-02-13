@@ -22,7 +22,7 @@ This application will not be deployed since it is only back-end. There are only 
 
 ## Usage Information:
 
-MongoDB is the database used in this application. Insomnia Core is used to test api routes.<br><br>Please review this video to see the functionality of the application and all the acceptance criteria being met:<br><br>
+MongoDB is the database used in this application. Insomnia Core is used to test api routes.<br><br>Please review the following 2 videos to see the functionality of the application and all the acceptance criteria being met:<br><br>Video 1 shows the technical acceptance criteria being met and api routes for both users and friends:<br><br>https://drive.google.com/file/d/1dvZ6PtJiaiDj7GlFsX8mcp3qi-xdP7IU/view .<br><br>Video shows the api routes for both thoughts and reactions:<br><br>https://drive.google.com/file/d/1OBrj80BkCdhERgeLXrS4FdUz0OWY4Cql/view .
 
 ## License:
 

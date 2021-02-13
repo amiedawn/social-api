@@ -79,7 +79,20 @@ const userController = {
           res.status(404).json({ message: "No user found with this id!" });
           return;
         }
-        res.json(dbUserData);
+        // delete any friends from this user
+        User.updateMany(
+          { _id: { $in: dbUserData.friends } },
+          { $pull: { friends: params.id } }
+        )
+        .then(() => {
+          // delete any thoughts from this user
+          Thought.deleteMany({ username: dbUserData.username })
+          .then(() => {
+            res.json({ message: "Successfully deleted user"});
+          })
+          .catch(err => res.status(400).json(err));
+        })
+        .catch(err => res.status(400).json(err));
       })
       .catch((err) => res.status(400).json(err));
   },
